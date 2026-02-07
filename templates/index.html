@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendation System</title>
+</head>
+<body>
+    <h1>🎬 Movie Recommendation System</h1>
+    <form method="POST">
+        <label>Enter a movie name:</label>
+        <input type="text" name="movie" required>
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    {% if recommendations %}
+        <h2>Recommended Movies:</h2>
+        <ul>
+        {% for rec in recommendations %}
+            <li>{{ rec }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
