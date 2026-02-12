@@ -2,17 +2,33 @@
 <html>
 <head>
     <title>Movie Recommendation System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            color: #fff;
+            text-align: center;
+        }
+        h1 { margin-top: 40px; color: #ffcc00; }
+        form { margin: 30px auto; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 12px; width: 50%; }
+        input[type="text"] { width: 80%; padding: 12px; border-radius: 8px; border: none; }
+        button { margin-top: 15px; background: #ffcc00; color: #000; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; }
+        button:hover { background: #ffaa00; }
+        ul { list-style: none; padding: 0; margin-top: 20px; }
+        li { background: rgba(255,255,255,0.1); margin: 10px auto; padding: 12px; width: 50%; border-radius: 8px; }
+    </style>
 </head>
 <body>
     <h1>🎬 Movie Recommendation System</h1>
     <form method="POST">
-        <label>Enter a movie name:</label>
+        <label>Enter a movie name or genre:</label>
         <input type="text" name="movie" required>
-        <button type="submit">Get Recommendations</button>
+        <br>
+        <button type="submit">Search</button>
     </form>
 
     {% if recommendations %}
-        <h2>Recommended Movies:</h2>
+        <h2>Results:</h2>
         <ul>
         {% for rec in recommendations %}
             <li>{{ rec }}</li>
