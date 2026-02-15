@@ -39,3 +39,4 @@ def recommend(movie_name):
 # Single input
 movie = input("Enter movie name: ")
 recommend(movie)
+
